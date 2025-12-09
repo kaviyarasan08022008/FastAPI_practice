@@ -1,0 +1,11 @@
+from db.database import SessionLocal
+
+def connect_to_db():
+    db = SessionLocal()
+
+    try:
+        print("Connected to db")
+        yield db
+    finally:
+
+        db.close()    
